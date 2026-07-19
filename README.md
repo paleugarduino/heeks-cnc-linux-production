@@ -1,4 +1,3 @@
-```markdown
 # HeeksCAD & HeeksCNC - Linux Production Edition
 
 Questo repository contiene una versione ottimizzata e corretta di HeeksCAD e HeeksCNC,<br>
