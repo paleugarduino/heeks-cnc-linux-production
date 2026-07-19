@@ -14,23 +14,28 @@ con file G-code di grandi dimensioni in officina. Questa edizione risolve questi
 ## 🛠️ Bug Corretti in questa Edizione
 
 ### 1. Rimozione del Blocco su File G-code Mastodontici (HeeksCNC)
-* **Problema:** Il coloratore sintattico del testo (`FormatText`) generava migliaia di tag grafici GTK2.<br>
+Problema: Il coloratore sintattico del testo (`FormatText`) generava migliaia di tag grafici GTK2.<br>
 Con file G-code da migliaia di righe, la CPU schizzava al 100% congelando l'applicazione per minuti.
-* **Soluzione:** Disattivata la formattazione dei colori pesante su Linux.<br>
+
+Soluzione: Disattivata la formattazione dei colori pesante su Linux.<br>
 La generazione e il caricamento del codice finale sono ora **istantanei** (frazioni di secondo anche su file enormi).
 
 ### 2. Risoluzione del "Freeze della Finestra Grigia" in Sovrascrittura (HeeksCAD)
-* **Problema:** Quando si salvava il G-code finale sovrascrivendo il pre-gcode, l'applicazione controllava<br>
+
+Problema: Quando si salvava il G-code finale sovrascrivendo il pre-gcode, l'applicazione controllava<br>
 continuamente gli appunti di sistema tramite X11 dentro un ciclo di *Idle*.<br>
 Questo innescava un deadlock con la finestra modale di salvataggio, bloccando l'interfaccia su un rettangolo grigio vuoto.
-* **Soluzione:** Cortocorticuitata la funzione `IsPasteReady()`.<br>
+
+Soluzione: Cortocorticuitata la funzione `IsPasteReady()`.<br>
 Il controllo ossessivo della clipboard su X11 è stato disattivato, eliminando definitivamente lo stallo grafico.
 
 ### 3. Scudo contro i Crash del Mouse nel Viewport 3D (HeeksCAD)
-* **Problema:** Se si muoveva il mouse sul display 3D subito dopo la rigenerazione di un percorso utensile,<br>
+
+Problema: Se si muoveva il mouse sul display 3D subito dopo la rigenerazione di un percorso utensile,<br>
 il programma cercava gli ID grafici dei vecchi vettori ormai rimossi dalla memoria.<br>
 Un comando `assert()` rigido causava il crash immediato del software (`SIGABRT`).
-* **Soluzione:** Sostituto l'assert in `Index.h` con un controllo di sicurezza tollerante.<br>
+
+Soluzione: Sostituto l'assert in `Index.h` con un controllo di sicurezza tollerante.<br>
 Se l'oggetto non esiste più, il programma restituisce `NULL` e continua a girare senza interrompere il lavoro dell'operatore.
 
 ---
@@ -42,8 +47,7 @@ esegui i seguenti comandi da **utente normale** all'interno del tuo ambiente di 
 
 ```bash
 mkdir -p ~/heeks-dev && cd ~/heeks-dev
-
-git clone [https://github.com/paleugarduino/heeks-cnc-linux-production.git](https://github.com/paleugarduino/heeks-cnc-linux-production.git)
+git clone https://github.com/paleugarduino/heeks-cnc-linux-production.git
 
 ```
 
@@ -106,9 +110,6 @@ apt-get --fix-broken install
 ## ⚖️ Licenza
 
 Questo progetto è rilasciato sotto la **BSD 3-Clause License** (New BSD License), mantenendo la licenza originale stabilita da Dan Heeks.
-
-
-
 
 Consulta il file `LICENSE` per maggiori dettagli.
 
