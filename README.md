@@ -2,7 +2,7 @@
 # HeeksCAD & HeeksCNC - Linux Production Edition
 
 Questo repository contiene una versione ottimizzata e corretta di HeeksCAD e HeeksCNC, 
-specificamente modificata per garantire stabilità, reattività e affidabilità in ambienti di produzione industriale<br>
+specificamente modificata per garantire stabilità, reattività e affidabilità in ambienti di produzione industriale
 su sistemi Linux (Debian/Ubuntu).
 
 Il codice originale di Dan Heeks soffriva di colli di bottiglia critici dovuti all'interfaccia grafica GTK2 
