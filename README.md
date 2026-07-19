@@ -33,7 +33,8 @@ Se l'oggetto non esiste più, il programma restituisce `NULL` e continua a girar
 
 ## 📦 Come Compilare i Pacchetti .deb (Ambiente Chroot Bionic)
 
-Per rigenerare i pacchetti puliti senza sporcare il sistema operativo ospite, esegui i seguenti comandi da utente normale all'interno del tuo ambiente di sviluppo:
+Per rigenerare i pacchetti puliti senza sporcare il sistema operativo ospite, esegui i seguenti comandi da utente normale
+all'interno del tuo ambiente di sviluppo:
 
 ```
 ### Compilazione Libarea
