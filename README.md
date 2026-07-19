@@ -36,24 +36,29 @@ Se l'oggetto non esiste più, il programma restituisce `NULL` e continua a girar
 Per rigenerare i pacchetti puliti senza sporcare il sistema operativo ospite, esegui i seguenti comandi da utente normale
 all'interno del tuo ambiente di sviluppo:
 
+
+mkdir heeks-dev && cd heeks-dev
+git clone heeks-cnc-linux-production
+
+
 ```
 ### Compilazione Libarea
 ```bash
-cd ~/heeks-dev/libarea
+cd ~/heeks-dev/heeks-cnc-linux-production/libarea
 debian/rules clean
 PATH=$PATH:/usr/sbin:/sbin LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu dpkg-buildpackage -us -uc -b -j$(nproc)
 
 ```
 ### Compilazione HeeksCAD
 ```bash
-cd ~/heeks-dev/heekscad
+cd ~/heeks-dev/heeks-cnc-linux-production/heekscad
 debian/rules clean
 PATH=$PATH:/usr/sbin:/sbin LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu dpkg-buildpackage -us -uc -b -j$(nproc)
 
 ```
 ### Compilazione HeeksCNC
 ```bash
-cd ~/heeks-dev/heekscnc
+cd ~/heeks-dev/heeks-cnc-linux-production/heekscnc
 debian/rules clean
 PATH=$PATH:/usr/sbin:/sbin LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu dpkg-buildpackage -us -uc -b -j$(nproc)
 
@@ -64,10 +69,11 @@ Da root dare i seguenti comandi:
 
 apt-get install python-ocl
 
-cd ~/heeks-dev
+cd ~/heeks-dev/heeks-cnc-linux-production
+
 dpkg -i *.deb
 
-apt-get apt --fix-broken install
+apt-get --fix-broken install
 ```
 
 ## ⚖️ Licenza
