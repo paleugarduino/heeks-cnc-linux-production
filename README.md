@@ -42,7 +42,7 @@ esegui i seguenti comandi da utente normale all'interno del tuo ambiente di svil
 ```bash
 mkdir -p ~/heeks-dev && cd ~/heeks-dev
 
-git clone [https://github.com/paleugarduino/heeks-cnc-linux-production.git](https://github.com/paleugarduino/heeks-cnc-linux-production.git)
+git clone https://github.com/paleugarduino/heeks-cnc-linux-production.git
 
 ```
 
@@ -108,4 +108,3 @@ Questo progetto è rilasciato sotto la BSD 3-Clause License (New BSD License), m
 
 
 Consulta il file `LICENSE` per maggiori dettagli.
-
